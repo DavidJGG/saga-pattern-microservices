@@ -1,5 +1,10 @@
 # saga-pattern-microservices
 
+## Desarrollado con:
+ * Java 11
+ * NetBeans 16
+ * Spring Boot 2.7.8
+
 ## Como probarlo
 * Levantar todos los servicios, Libros, Mesas, Orquestado y cuando estos tres ya estén levantados ejecutar el de reserva.
 
