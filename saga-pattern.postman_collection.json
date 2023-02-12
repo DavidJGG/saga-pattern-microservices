@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "403095f7-59f5-43a7-842b-96531b394a2e",
+		"name": "saga-pattern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Libro",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7703/api/libros",
+							"host": [
+								"localhost"
+							],
+							"port": "7703",
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codlibro\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7703/api/libros/reservar",
+							"host": [
+								"localhost"
+							],
+							"port": "7703",
+							"path": [
+								"api",
+								"libros",
+								"reservar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revertir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codlibro\": 4,\r\n    \"titulo\": \"Libro 4\",\r\n    \"disponible\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7703/api/libros/revertir",
+							"host": [
+								"localhost"
+							],
+							"port": "7703",
+							"path": [
+								"api",
+								"libros",
+								"revertir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mesa",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7704/api/mesas",
+							"host": [
+								"localhost"
+							],
+							"port": "7704",
+							"path": [
+								"api",
+								"mesas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero\": 1,\r\n    \"nivel\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7704/api/mesas/reservar",
+							"host": [
+								"localhost"
+							],
+							"port": "7704",
+							"path": [
+								"api",
+								"mesas",
+								"reservar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revertir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codmesa\": 1,\r\n    \"nivel\": 1,\r\n    \"numero\": 1,\r\n    \"disponible\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7704/api/mesas/revertir",
+							"host": [
+								"localhost"
+							],
+							"port": "7704",
+							"path": [
+								"api",
+								"mesas",
+								"revertir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orquestador",
+			"item": [
+				{
+					"name": "Reservar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codlibro\": 4,\r\n    \"nivelMesa\": 2,\r\n    \"numeroMesa\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7702/api/reservar",
+							"host": [
+								"localhost"
+							],
+							"port": "7702",
+							"path": [
+								"api",
+								"reservar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RevarService",
+			"item": [
+				{
+					"name": "Reservar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codlibro\": 4,\r\n    \"nivelMesa\": 2,\r\n    \"numeroMesa\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7701/api/reservar",
+							"host": [
+								"localhost"
+							],
+							"port": "7701",
+							"path": [
+								"api",
+								"reservar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
